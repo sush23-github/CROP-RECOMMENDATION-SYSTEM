@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushma B T - Web Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #111;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Flexbox Layout */
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+
+        header {
+            background-color: #6a1b9a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            animation: fadeIn 2s;
+        }
+
+        /* Profile image & Name */
+        .profile-img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border: 5px solid #FFD700;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-name {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+        .profile-info {
+            font-size: 1.1rem;
+            color: #FFD700;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #2e003e;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #6a1b9a;
+        }
+
+        /* Content Sections */
+        section {
+            display: none;
+            padding: 20px;
+            background-color: #222;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1.5s ease;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #FFD700;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 5px;
+        }
+
+        /* Buttons & Links */
+        .button {
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #FFD700;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #6a1b9a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            animation: fadeIn 2s;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="your-photo.jpg" alt="Profile Picture" class="profile-img">
+            <div class="profile-name">Sushma B T</div>
+            <div class="profile-info">Phone: 918970415618 | Email: subthyr@gmail.com</div>
+        </header>
+
+        <div class="nav">
+            <a href="javascript:void(0)" onclick="showSection('summary')">Summary</a>
+            <a href="javascript:void(0)" onclick="showSection('education')">Education</a>
+            <a href="javascript:void(0)" onclick="showSection('skills')">Skills</a>
+            <a href="javascript:void(0)" onclick="showSection('projects')">Projects</a>
+            <a href="javascript:void(0)" onclick="showSection('certifications')">Certifications</a>
+        </div>
+
+        <div class="container-content">
+            <section id="summary">
+                <h2>Professional Summary</h2>
+                <p>Motivated and detail-oriented professional seeking an entry-level position to develop, implement, and improve innovative solutions, leverage strong problem-solving, research, and time management skills to contribute to team success and achieve company goals.</p>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <ul>
+                    <li><strong>University BDT College of Engineering</strong> - Davanagere, Karnataka, B.E CSE, 06/2024, GPA: 7.97 (72.20%)</li>
+                    <li><strong>Ascent PU College</strong> - Nandhihalli, Hiriyur, 12TH, 03/2020, (91.50%)</li>
+                    <li><strong>St Anne's High School</strong> - Hiriyur, Chitradurga, 10TH BOARD, 04/2018, (92.32%)</li>
+                </ul>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>SQL, HTML, CSS, JavaScript</li>
+                    <li>Java, Python, JEE, DSA</li>
+                    <li>Problem Solving, Analytics, Data Visualization, Good Communication</li>
+                    <li>Tools: Visual Studio Code, Eclipse, Git, ChatGPT, AI Tools</li>
+                </ul>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <ul>
+                    <li>Crop Recommendation System, Rice Leaf Disease Detection</li>
+                    <li>Hate Speech Detector, Credit EDA Analysis in Data Science</li>
+                    <li>Tap Academy Clone Website</li>
+                </ul>
+            </section>
+
+            <section id="certifications">
+                <h2>Certifications</h2>
+                <button class="button" onclick="showCertificates()">Certificate</button>
+                <div class="certificate-images" style="display: none;">
+                    <img src="certificate1.jpg" alt="Certificate 1" style="width: 200px; height: auto;">
+                    <img src="certificate2.jpg" alt="Certificate 2" style="width: 200px; height: auto;">
+                    <img src="certificate3.jpg" alt="Certificate 3" style="width: 200px; height: auto;">
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Sushma B T. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function showCertificates() {
+            const certImages = document.querySelector('.certificate-images');
+            certImages.style.display = certImages.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+</html>
